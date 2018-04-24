@@ -135,22 +135,28 @@ class TicTacToe
     end
   end
 
-  def play(board)
-  until over?(board) == true
-    turn(board)
-  end
-  if won?(board) != false
-    if winner(board) == "X"
-      puts "Congratulations X!"
-    elsif winner(board) == "O"
-      puts "Congratulations O!"
+  def play
+    counter = 0
+    until counter == 9
+      turn
+      counter += 1
+    end  
+    until over? == true
+      turn
     end
-  elsif draw?(board) == true
-    puts "Cat's Game!"
-  input = turn(board)
-  counter = 0
-  until counter == 9
-    turn(board)
-    counter += 1
+    if won? != false
+      if winner == "X"
+        puts "Congratulations X!"
+      elsif winner == "O"
+        puts "Congratulations O!"
+      end
+    elsif draw? == true
+      puts "Cat's Game!"
+    input = turn
+    counter = 0
+    until counter == 9
+      turn
+      counter += 1
+    end
   end
 end
