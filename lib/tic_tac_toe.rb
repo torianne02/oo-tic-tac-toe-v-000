@@ -136,25 +136,3 @@ def winner
   end
 end
 
-def play(board)
-<<<<<<< HEAD
-  until over?(board) == true
-    turn(board)
-  end
-  if won?(board) != false
-    if winner(board) == "X"
-      puts "Congratulations X!"
-    elsif winner(board) == "O"
-      puts "Congratulations O!"
-    end
-  elsif draw?(board) == true
-    puts "Cat's Game!"
-=======
-  input = turn(board)
-  counter = 0
-  until counter == 9
-    turn(board)
-    counter += 1
->>>>>>> be156f194dc8a578c4d8a152cfc5407c283e6dd7
-  end
-end
