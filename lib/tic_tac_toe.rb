@@ -136,11 +136,12 @@ class TicTacToe
   end
 
   def play
+    input = turn
     counter = 0
     until counter == 9
       turn
       counter += 1
-    end  
+    end
     until over? == true
       turn
     end
@@ -152,11 +153,6 @@ class TicTacToe
       end
     elsif draw? == true
       puts "Cat's Game!"
-    input = turn
-    counter = 0
-    until counter == 9
-      turn
-      counter += 1
     end
   end
 end
