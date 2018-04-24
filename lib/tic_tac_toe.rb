@@ -92,46 +92,46 @@ class TicTacToe
      end
      return false
   end
-end
 
-def full?
-  counter = 0
-  @board.each do |move|
-    if move == "X" || move == "O"
-      counter += 1
+  def full?
+    counter = 0
+    @board.each do |move|
+      if move == "X" || move == "O"
+        counter += 1
+      else
+        false
+      end
+    end
+    if counter < 9
+      return false
+    else
+      return true
+    end
+  end
+
+  def draw?
+    if full? == true && won? == false
+      return true
+    else
+      return false
+    end
+  end
+
+  def over?
+    if full? == true || won? != false || draw? == true
+      return true
     else
       false
     end
   end
-  if counter < 9
-    return false
-  else
-    return true
-  end
-end
 
-def draw?
-  if full? == true && won? == false
-    return true
-  else
-    return false
-  end
-end
-
-def over?
-  if full? == true || won? != false || draw? == true
-    return true
-  else
-    false
-  end
-end
-
-def winner
-  if won? == false
-    return nil
-  elsif @board[won?[0]] == "X"
-    return "X"
-  elsif @board[won?[0]] == "O"
-    return "O"
+  def winner
+    if won? == false
+      return nil
+    elsif @board[won?[0]] == "X"
+      return "X"
+    elsif @board[won?[0]] == "O"
+      return "O"
+    end
   end
 end
