@@ -135,4 +135,3 @@ def winner
     return "O"
   end
 end
-
